@@ -4,7 +4,7 @@ public class Race {
         System.out.println("\n--- Início da Corrida (com Prioridade) ---\n");
 
        
-  // Racers de prioridade MAXIMA
+  //racers de prioridade MAXIMA
         for (int i = 1; i <= 5; i++) {
             RacerRunnable racer = new RacerRunnable(i);
              try {
@@ -15,13 +15,13 @@ public class Race {
                 return;
             }
             Thread thread = new Thread(racer);
-            thread.setPriority(Thread.MAX_PRIORITY); // Prioridade MAXIMA
+            thread.setPriority(Thread.MAX_PRIORITY); //prioridade MAXIMA
             thread.start();
             
         }
 
 
-        // Racers de prioridade MINIMA
+        //racers de prioridade MINIMA
         for (int i = 6; i <= 10; i++) {
             RacerThread racer = new RacerThread(i);
             try {
@@ -32,7 +32,7 @@ public class Race {
                 return;
             }
             Thread thread = new Thread(racer);
-            thread.setPriority(Thread.MIN_PRIORITY); // Prioridade mínima
+            thread.setPriority(Thread.MIN_PRIORITY); //prioridade mínima
             thread.start();
         }
         
@@ -40,3 +40,4 @@ public class Race {
     }
    
     }
+
