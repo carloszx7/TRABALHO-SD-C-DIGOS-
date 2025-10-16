@@ -19,17 +19,17 @@ public class Main {
         Thread consThread4 = new Thread(c4);
         Thread consThread5 = new Thread(c5);
 
-        //iniciar o produtor
+        //inicia o produtor
         produtorThread.start();
 
-        //iniciar os consumidores
+        //inicia os consumidores
         consThread1.start();
         consThread2.start();
         consThread3.start();
         consThread4.start();
         consThread5.start();
 
-        //esperar que as threads terminem (para que a main não encerre antes)
+        //espera que as threads terminem (para que a main não encerre antes)
         try {
             produtorThread.join();
             consThread1.join();
@@ -45,4 +45,5 @@ public class Main {
         System.out.println("\n --- Execução Terminada ---");
         System.out.println("\n Itens finais no depósito: " + deposito.getNumItens() + "\n");
     }
+
 }
