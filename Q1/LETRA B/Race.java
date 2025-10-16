@@ -2,14 +2,15 @@
 public class Race {
     public static void main(String[] args) {
         //criação  da interface (Runnable):
-        Runnable racerRunnable = new RacerRunnable(i);
+        Runnable racerRunnable = new RacerRunnable(1);
         //criação o "objeto" Thread: 
         Thread thread1 = new Thread(racerRunnable);
         thread1.start();
         //criação da Thread e execução:
-        RacerThread racerThread = new RacerThread(i);
+        RacerThread racerThread = new RacerThread(2);
         racerThread.start();
     }
 }
+
 
 
