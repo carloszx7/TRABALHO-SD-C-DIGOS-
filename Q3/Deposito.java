@@ -7,7 +7,7 @@ public class Deposito {
     }
 
     public synchronized boolean retirar() {
-        if (items > 0) { //so retira se houver itens
+        if (items > 0) { //somente retira se houver itens
             items--;
             System.out.println("Retirou um item. Itens no depósito: " + items);
             notifyAll(); //notifica produtores que há espaço
@@ -17,7 +17,7 @@ public class Deposito {
     }
 
     public synchronized boolean colocar() {
-        if (items < capacidade) { //so coloca se houver espaço
+        if (items < capacidade) { //somente coloca se houver espaço
             items++;
             System.out.println("Colocou um item. Itens no depósito: " + items);
             notifyAll(); //notifica consumidores que há itens
@@ -25,4 +25,5 @@ public class Deposito {
         }
         return false;
     }
+
 }
