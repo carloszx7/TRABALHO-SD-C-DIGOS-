@@ -1,7 +1,7 @@
 public class Consumidor implements Runnable {
     private Deposito deposito;
-    private int tempoConsumo;
-    private static final int CAIXAS_A_CONSUMIR = 20;
+    private int tempoConsumo; //sleep contando o tempo entre consumos
+    private static final int CAIXAS_A_CONSUMIR = 20; //cada consumidor consome no total  20 caixas
     private int caixasConsumidas = 0;
 
     public Consumidor(Deposito deposito, int tempoConsumo) {
@@ -28,4 +28,5 @@ public class Consumidor implements Runnable {
         }
         System.out.println("\n --- Consumidor terminou de consumir " + CAIXAS_A_CONSUMIR + " caixas. --- \n");
     }
+
 }
