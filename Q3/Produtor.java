@@ -1,7 +1,7 @@
 public class Produtor implements Runnable {
     private Deposito deposito;
-    private int tempoProducao;
-    private static final int MAX_CAIXAS = 100;
+    private int tempoProducao; //sleep entre produções
+    private static final int MAX_CAIXAS = 100; //produtor produz no total 100 caixas
     private int caixasProduzidas = 0;
 
     public Produtor(Deposito deposito, int tempoProducao) {
@@ -13,7 +13,8 @@ public class Produtor implements Runnable {
     public void run() {
         while (caixasProduzidas < MAX_CAIXAS) {
             try {
-                if (deposito.colocar()) { //tenta colocar
+                //tenta colocar um item, espera se o depósito estiver cheio
+                if (deposito.colocar()) { 
                     caixasProduzidas++;
                     Thread.sleep(tempoProducao); //simula o tempo de produção
                 } else {
@@ -28,4 +29,5 @@ public class Produtor implements Runnable {
         }
         System.out.println("\n --- Produtor terminou de produzir " + MAX_CAIXAS + " caixas. --- \n");
     }
+
 }
