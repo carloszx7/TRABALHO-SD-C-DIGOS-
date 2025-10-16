@@ -13,7 +13,7 @@ public class RacerRunnable implements Runnable {
             System.out.println("Racer " + racer + " - imprimindo (" + (printCount + 1) + "/" + MAX_PRINTS + ")");
             printCount++;
             try {
-                Thread.sleep(10); // Um pequeno sleep para visualizar melhor
+                Thread.sleep(10); //um pequeno sleep para visualizar melhor
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
                 System.out.println("Racer " + racer + " foi interrompido.");
@@ -22,4 +22,5 @@ public class RacerRunnable implements Runnable {
         }
         System.out.println("\n --- Racer " + racer + " terminou sua corrida.--- \n");
     }
+
 }
